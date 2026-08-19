@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CineHub</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class"
+    };
+  </script>
+</head>
+
+<body class="min-h-screen bg-gray-100 text-gray-900 transition-colors duration-300 dark:bg-gray-950 dark:text-white">
+
+  <!-- HEADER -->
+
+  <header class="flex flex-col gap-4 border-b border-gray-300 bg-white px-6 py-4 shadow-sm transition-colors dark:border-gray-800 dark:bg-gray-900 md:flex-row md:items-center md:justify-between">
+
+    <a
+      href="index.html"
+      class="text-2xl font-extrabold text-pink-600"
+    >
+      CineHub
+    </a>
+
+    <nav aria-label="Navegación principal">
+
+      <ul class="flex flex-wrap items-center gap-5">
+
+        <li>
+          <a
+            href="#populares"
+            class="font-medium transition hover:text-pink-600"
+          >
+            Películas
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#registro"
+            class="font-medium transition hover:text-pink-600"
+          >
+            Mis planes
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#buscar"
+            class="font-medium transition hover:text-pink-600"
+          >
+            Buscar
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#faq"
+            class="font-medium transition hover:text-pink-600"
+          >
+            FAQ
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="about.html"
+            class="font-medium transition hover:text-pink-600"
+          >
+            Acerca de
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+    <!-- BOTÓN MODO OSCURO -->
+
+    <button
+      id="theme-toggle"
+      type="button"
+      class="rounded-lg bg-pink-600 px-4 py-2 font-semibold text-white transition hover:bg-pink-700"
+      aria-label="Cambiar a modo oscuro"
+    >
+      🌙 Modo oscuro
+    </button>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section
+      id="buscar"
+      class="px-6 py-12 md:px-10 lg:px-16"
+    >
+
+      <div class="mx-auto max-w-5xl">
+
+        <h1 class="mb-5 max-w-4xl text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl">
+
+          Deja de perder tus planes de cine
+          en el chat grupal
+
+        </h1>
+
+        <p class="mb-8 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+
+          Encuentra una película, elige un horario y crea un plan
+          que tus amigos puedan confirmar con un solo clic.
+
+        </p>
+
+
+        <!-- BUSCADOR -->
+
+        <form
+          id="search-form"
+          action="#"
+          method="get"
+          class="flex max-w-xl flex-col gap-3"
+        >
+
+          <label
+            for="search"
+            class="font-semibold"
+          >
+            Buscar películas
+          </label>
+
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Ej: Spider-Man"
+            autocomplete="off"
+            class="rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none transition focus:border-pink-600 focus:ring-2 focus:ring-pink-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:focus:ring-pink-900"
+          >
+
+          <button
+            type="submit"
+            class="w-fit rounded-lg bg-pink-600 px-6 py-3 font-semibold text-white transition hover:bg-pink-700"
+          >
+            Buscar
+          </button>
+
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            💡 Atajo: presiona
+            <strong>Ctrl + K</strong>
+            para ir directamente al buscador.
+          </p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- PELÍCULAS -->
+
+    <section
+      id="populares"
+      class="px-6 py-10 md:px-10 lg:px-16"
+    >
+
+      <div class="mx-auto max-w-6xl">
+
+        <h2 class="mb-6 text-3xl font-bold">
+          Películas populares
+        </h2>
+
+
+        <div
+          id="movie-grid"
+          class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
+
+          <!-- SPIDER-MAN -->
+
+          <article
+            class="movie-card overflow-hidden rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
+          >
+
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRBNPetHukrorY8xN9XZtnwS7oR5mv0xOYiMCTlrv5UA&s=10"
+              alt="Póster de la película Spider-Man"
+              class="mb-4 h-96 w-full rounded-lg object-cover"
+            >
+
+            <h3 class="text-xl font-bold">
+              Spider-Man
+            </h3>
+
+            <p class="mt-2 text-gray-600 dark:text-gray-300">
+              ⭐ 8.2 · Acción
+            </p>
+
+          </article>
+
+
+          <!-- L'ODYSSÉE -->
+
+          <article
+            class="movie-card overflow-hidden rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
+          >
+
+            <img
+              src="https://www.universalpictures.es/tl_files/content/movies/odyssey/posters/02.jpg"
+              alt="Póster de la película L'Odyssée"
+              class="mb-4 h-96 w-full rounded-lg object-cover"
+            >
+
+            <h3 class="text-xl font-bold">
+              L'Odyssée
+            </h3>
+
+            <p class="mt-2 text-gray-600 dark:text-gray-300">
+              ⭐ 8.0 · Aventura
+            </p>
+
+          </article>
+
+
+          <!-- MICHAEL -->
+
+          <article
+            class="movie-card overflow-hidden rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
+          >
+
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7wXM-YpkcwSp9geWDIj3qtdqMU0WVnHIyk35ZITqeXQ&s=10"
+              alt="Póster de la película Michael"
+              class="mb-4 h-96 w-full rounded-lg object-cover"
+            >
+
+            <h3 class="text-xl font-bold">
+              Michael
+            </h3>
+
+            <p class="mt-2 text-gray-600 dark:text-gray-300">
+              ⭐ 8.1 · Drama
+            </p>
+
+          </article>
+
+
+          <!-- BATMAN -->
+
+          <article
+            class="movie-card overflow-hidden rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
+          >
+
+            <img
+              src="https://placehold.co/600x900?text=Batman"
+              alt="Póster de la película Batman"
+              class="mb-4 h-96 w-full rounded-lg object-cover"
+            >
+
+            <h3 class="text-xl font-bold">
+              Batman
+            </h3>
+
+            <p class="mt-2 text-gray-600 dark:text-gray-300">
+              ⭐ 8.5 · Acción
+            </p>
+
+          </article>
+
+
+          <!-- AVENGERS -->
+
+          <article
+            class="movie-card overflow-hidden rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
+          >
+
+            <img
+              src="https://placehold.co/600x900?text=Avengers"
+              alt="Póster de la película Avengers"
+              class="mb-4 h-96 w-full rounded-lg object-cover"
+            >
+
+            <h3 class="text-xl font-bold">
+              Avengers
+            </h3>
+
+            <p class="mt-2 text-gray-600 dark:text-gray-300">
+              ⭐ 8.4 · Acción
+            </p>
+
+          </article>
+
+
+          <!-- INTERSTELLAR -->
+
+          <article
+            class="movie-card overflow-hidden rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
+          >
+
+            <img
+              src="https://placehold.co/600x900?text=Interstellar"
+              alt="Póster de la película Interstellar"
+              class="mb-4 h-96 w-full rounded-lg object-cover"
+            >
+
+            <h3 class="text-xl font-bold">
+              Interstellar
+            </h3>
+
+            <p class="mt-2 text-gray-600 dark:text-gray-300">
+              ⭐ 8.7 · Ciencia ficción
+            </p>
+
+          </article>
+
+        </div>
+
+
+        <!-- SIN RESULTADOS -->
+
+        <p
+          id="no-results"
+          hidden
+          class="mt-6 rounded-lg bg-gray-200 p-4 text-center font-semibold dark:bg-gray-800"
+        >
+          No encontramos películas con ese nombre.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- REGISTRO -->
+
+    <section
+      id="registro"
+      class="px-6 py-12 md:px-10 lg:px-16"
+    >
+
+      <div class="mx-auto max-w-2xl">
+
+        <h2 class="text-3xl font-bold">
+          Crea tu cuenta
+        </h2>
+
+        <p class="mt-3 text-gray-600 dark:text-gray-300">
+          Regístrate para crear planes de cine y compartirlos
+          con tus amigos.
+        </p>
+
+
+        <form
+          id="signup-form"
+          action="#"
+          method="post"
+          novalidate
+          class="mt-8 flex flex-col gap-6"
+        >
+
+          <!-- NOMBRE -->
+
+          <div>
+
+            <label
+              for="name"
+              class="mb-2 block font-semibold"
+            >
+              Nombre
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              autocomplete="name"
+              class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none focus:border-pink-600 focus:ring-2 focus:ring-pink-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:focus:ring-pink-900"
+            >
+
+            <p
+              id="name-error"
+              hidden
+              class="mt-2 text-sm font-semibold text-red-600"
+            ></p>
+
+          </div>
+
+
+          <!-- CORREO -->
+
+          <div>
+
+            <label
+              for="email"
+              class="mb-2 block font-semibold"
+            >
+              Correo electrónico
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none focus:border-pink-600 focus:ring-2 focus:ring-pink-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:focus:ring-pink-900"
+            >
+
+            <p
+              id="email-error"
+              hidden
+              class="mt-2 text-sm font-semibold text-red-600"
+            ></p>
+
+          </div>
+
+
+          <!-- CONTRASEÑA -->
+
+          <div>
+
+            <label
+              for="password"
+              class="mb-2 block font-semibold"
+            >
+              Contraseña
+            </label>
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="new-password"
+              class="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none focus:border-pink-600 focus:ring-2 focus:ring-pink-200 dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:focus:ring-pink-900"
+            >
+
+            <p
+              id="password-error"
+              hidden
+              class="mt-2 text-sm font-semibold text-red-600"
+            ></p>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="w-fit rounded-lg bg-pink-600 px-6 py-3 font-semibold text-white transition hover:bg-pink-700"
+          >
+            Registrarme
+          </button>
+
+
+          <p
+            id="form-success"
+            hidden
+            class="rounded-lg bg-green-100 p-4 font-semibold text-green-700 dark:bg-green-900/30 dark:text-green-300"
+          ></p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section
+      id="faq"
+      class="px-6 py-12 md:px-10 lg:px-16"
+    >
+
+      <div class="mx-auto max-w-4xl">
+
+        <h2 class="mb-8 text-3xl font-bold">
+          Preguntas frecuentes
+        </h2>
+
+
+        <article
+          class="mb-4 rounded-xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900"
+        >
+
+          <a
+            href="#respuesta-1"
+            class="font-bold text-pink-600"
+          >
+            ¿Necesito crear una cuenta?
+          </a>
+
+          <p
+            id="respuesta-1"
+            class="mt-3 text-gray-600 dark:text-gray-300"
+          >
+            No. Puedes consultar las películas y organizar
+            un plan con tus amigos.
+          </p>
+
+        </article>
+
+
+        <article
+          class="mb-4 rounded-xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900"
+        >
+
+          <a
+            href="#respuesta-2"
+            class="font-bold text-pink-600"
+          >
+            ¿Puedo compartir un plan con mis amigos?
+          </a>
+
+          <p
+            id="respuesta-2"
+            class="mt-3 text-gray-600 dark:text-gray-300"
+          >
+            Sí. Puedes compartir los detalles de una salida
+            para que tus amigos conozcan la película, el cine
+            y el horario.
+          </p>
+
+        </article>
+
+
+        <article
+          class="mb-4 rounded-xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900"
+        >
+
+          <a
+            href="#respuesta-3"
+            class="font-bold text-pink-600"
+          >
+            ¿Puedo elegir el horario?
+          </a>
+
+          <p
+            id="respuesta-3"
+            class="mt-3 text-gray-600 dark:text-gray-300"
+          >
+            Sí. CineHub permite seleccionar una función para
+            construir el plan de la salida.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer
+    class="border-t border-gray-300 bg-white px-6 py-6 text-center text-sm text-gray-500 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400"
+  >
+
+    <p>
+      CineHub · Universidad de La Sabana
+    </p>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script
+    type="module"
+    src="js/main.js"
+  ></script>
+
+</body>
+
+</html>
