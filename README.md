@@ -1,3 +1,8 @@
+# Name
+David Gomez
+
+# Website
+https://github.com/amezingdace-maker
 # HW05 — JavaScript Fundamentals
 
 **Week 5 · DSAW · Universidad de La Sabana**
